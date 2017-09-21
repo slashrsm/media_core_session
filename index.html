@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Media in core</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/md_systems.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section id="front">
+	  <h2>Media is in core!</h2><h3>What is in it for me?</h3>
+	  <a href="https://www.drupal.org/u/slashrsm">Janez Urevc</a> | <a href="http://twitter.com/slashrsm">@slashrsm</a> | <a href="https://janezurevc.name">janezurevc.name</a>
+	  <p>
+	    <a href="http://static.janezurevc.name">static.janezurevc.name/media_vienna</a>
+	  </p>
+	</section>
+
+	<section>
+	  <section id="about-presenter">
+	    <div class="columns aspect-1-by-3">
+	      <div>
+		<img data-src="https://farm6.staticflickr.com/5641/30911659922_00c14ebe0e_k_d.jpg" />
+	      </div>
+	      <div>
+		<h3>Janez Urevc (<a href="https://drupal.org/u/slashrsm">@slashrsm</a>)</h3>
+		<ul>
+		  <li>senior engineer and team lead at MD Systems</li>
+		  <li>Active member of Drupal community since 2009</li>
+		  <li>Lead of the D8 media initiative</li>
+		</ul>
+	      </div>
+	    </div>
+      </section>
+
+
+	  <section>
+	    <h2><img src="md_assets/logo-white.svg" style="height: 0.8em; vertical-align: middle; border: 0; background: 0;"> - top contributors</h2>
+		<ul>
+          <li>our CTO (<a href="https://drupal.org/u/berdir">@berdir</a>) is one of top 5 D8 contributors</li>
+          <li><a href="https://dri.es/who-sponsors-drupal-development-2017">top Drupal contributors</a></li>
+          <li>Leading major Drupal initiatives</li>
+		  <li>D8 expert</li>
+		  <li>D8 media expert - lots of media clients</li>
+		  <li>20% of every project to the community</li>
+		  <li>Full projects, audits, bootstrap weeks, consulting, architecture, ...</li>
+		</ul>
+	      <aside class="notes">
+		<ul>
+		  <li>top 5 D8 ind. contrib.</li>
+		  <li>D8 expert</li>
+		  <li>D8 media expert (NP8)</li>
+		</ul>
+	      </aside>
+	  </section>
+
+	</section>
+
+    <section id="history">
+        <section>
+        <h3>A bit of history...</h3>
+        <ul>
+            <li>Beginning of D8 cycle: a lot of ideas</li>
+            <li>NYC Camp 2015: roadmap defined</li>
+            <li>Entity browser, Media entity, Entity embed, ... are born</li>
+            <li>Very lonely initiative</li>
+            <li>NYC Camp, Examiner.com, MD Systems - media ecosystems would not exist without them</li>
+        </ul>
+        </section>
+
+        <section>
+            <h3>Adoption starts...</h3>
+            <img src="img/eb_stats.png">
+        </section>
+        <section>
+            <h3>Adoption starts...</h3>
+            <img src="img/lightning.png" style="border: 0">
+            <br >
+            <img src="img/thunder-logo.png" style="border: 0">
+        </section>
+        <section>
+            <h3>Adoption starts...</h3>
+            <ul>
+                <li>Case studies</li>
+                <li>Tutorials</li>
+                <li>Webinars</li>
+                <li>...</li>
+            </ul>
+        </section>
+        <section>
+            <h2>We knew we're on the right track!</h2>
+            <p>* but still felt kinda lonely....</p>
+        </section>
+    </section>
+
+    <section id="challenges">
+        <section>
+            <h3>There are always some challenges...</h3>
+            <ul>
+                <li class="fragment">Complex ecosystem, challenging to configure</li>
+                <li class="fragment">No visual guideance</li>
+                <li class="fragment">Core uses completely different solution</li>
+                <li class="fragment">Contrib is hidden from evaluators to some extent</li>
+            </ul>
+            <aside class="notes" data-markdown>
+                - files vs media -> need to be aware when architecting
+                - Distros solve evaluator problem to some extent
+            </aside>
+        </section>
+    </section>
+
+    <section id="why-core">
+        <h3>Why include Media in core?</h3>
+        <ul>
+            <li class="fragment">Standardization</li>
+            <li class="fragment">Discoverability</li>
+            <li class="fragment">Visual guideance</li>
+            <li class="fragment">Scrunity, better quality</li>
+            <li class="fragment">Sustainable maintenance</li>
+        </ul>
+    </section>
+
+    <section id="mvp">
+        <h3>MVP for media in core</h3>
+        <ul>
+            <li>Current functionality (files, images, embedding) +</li>
+            <li>Support for remote media (YouTube)</li>
+            <li>Media library</li>
+            <li>Reusability</li>
+            <li class="fragment">Media entity needed in the very foundations!</li>
+        </ul>
+        <aside class="notes" data-markdown>
+            - ME is required for remote media
+            - in very foundations so it needs to be done first
+            - affects everything else
+        </aside>
+    </section>
+
+    <section id="timeline">
+        <section>
+        <h3>Timeline</h3>
+        <ul>
+            <li class="fragment">Spring 2016 - interest expressed around New Orleans</li>
+            <li  class="fragment">First meetings happen, no real results</li>
+            <li class="fragment">Roadmap proposed on DC Dublin</li>
+            <li class="fragment">We spend 4 months documenting it and getting sign-off</li>
+            <li class="fragment">First "Media in core" in December 2016</li>
+            <li class="fragment">Media entity committed on May 19th</li>
+        </ul>
+<aside class="notes" data-markdown>
+    - almost 400 comments, 235kb patch, "This is by far the single largest feature to go into 8.x directly as stable since 8.0.0 was released"
+    - just a first step
+</aside>
+</section>
+
+<section>
+<h3>Timeline</h3>
+
+        <ul>
+            <li class="fragment">Widgets, formatters</li>
+            <li  class="fragment">Migration support</li>
+            <li class="fragment">...</li>
+        </ul>
+
+        <p class="fragment">We still have <strong>at least a year</strong> of hard work in front of us to reach MVP.</p>
+</section>
+    </section>
+
+    <section id="funding">
+        <section>
+            <h2>Let's stop for a moment...</h2>
+        </section>
+
+        <section>
+            <h2>...and talk about...</h2>
+        </section>
+
+        <section>
+            <h1>Funding</h1>
+        </section>
+
+        <section>
+            <h3>Funding</h3>
+            <ul>
+                <li class="fragment">This is huge!</li>
+                <li class="fragment">without the initial investment from Examiner.com and MD Systems there would be no media in D8</li>
+                <li class="fragment">20k sites are using media ecosystem today, multi-million €€ projects</li>
+                <li class="fragment">And yet...</li>
+                <li class="fragment">...we still rely on volunteers</li>
+            </ul>
+        </section>
+        <section>
+            <h1>"We are waiting until it is ready."</h1>
+                        <aside class="notes" data-markdown>
+    - not Sustainable
+    - we have to do something about it or it might not happen
+</aside>
+        </section>
+    </section>
+
+    <section id="practical">
+        <section>
+            <h2>But what is in it for me?</h2>
+        </section>
+        <section>
+            <ul>
+            <li>Media entity is now in core</li>
+            <li>API changed a bit, <a href="https://janezurevc.name/call-help-media-source-plugin-porting">plugins need to be ported</a></li>
+            <li>Not enabled by default</li>
+            <li>You can still using contrib Media entity</li>
+            </ul>
+        </section>
+        <section>
+            <h3>You have a site that uses Media entitiy</h3>
+            <ul>
+                <li class="fragment">Start testing migration to core version</li>
+                <li class="fragment">Check if there are any plugin ports missing, help</li>
+                <li class="fragment">Move to core version when you feel comfortable</li>
+            </ul>
+        </section>
+        <section>
+            <h3>You have a site that uses files/File entity</h3>
+            <ul>
+                <li class="fragment">You can use this approach until the end of D8 life cycle</li>
+                <li class="fragment">If you feel there are benefits moving to Media entity</li>
+                <li class="fragment">Start working on migration, collaborate</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Planning a new site</h3>
+            <ul>
+                <li class="fragment">Use core Media entity if possible</li>
+                <li class="fragment">Otherwise use media entity from contrib</li>
+            </ul>
+        </section>
+    </section>
+
+    <section id="help">
+        <h2>We need help!</h2>
+        <p>Weekly meetings, #drupal-media on IRC, 14:00 UTC every Wednesday</p>
+        <p>Join us on sprints this week!</p>
+    </section>
+
+  <section>
+      <h3>We can support you with your next media project!</h3>
+
+      <p><a href="https://md-systems.ch/contact">md-systems.ch/contact</a> or <a href="https://twitter.com/mdsystems_ch">@mdsystems_ch</a></p>
+  </section>
+
+	<section id="last">
+	    <h2>Thank you! Questions?</h2>
+	    <a href="https://www.drupal.org/u/slashrsm">Janez Urevc</a> | <a href="http://twitter.com/slashrsm">@slashrsm</a> | <a href="https://janezurevc.name">janezurevc.name</a>
+	    <p>
+	        <a href="http://static.janezurevc.name/media_vienna">static.janezurevc.name/media_vienna</a>
+	</p>
+</section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      history: true,
+
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      { src: 'plugin/notes/notes.js', async: true },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+      ]
+      });
+    </script>
+  </body>
+</html>
